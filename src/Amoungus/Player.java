@@ -75,8 +75,9 @@ public class Player {
     public void killsGenerate(List<Player> players) {
         for (int i = 0; i < players.size(); i++) {
             int random = new Random().nextInt(100);
-            if (random % 2 == 0){
+            if (random % 2 == 0 && Map.TYPE_IMPOSTOR != players.get(i).getType()){
                 players.get(i).setKill(true);
+                this.kills.add(players.get(i));
             }
         }
     }
