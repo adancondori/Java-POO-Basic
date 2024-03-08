@@ -7,7 +7,7 @@ import java.util.Random;
 public class Person {
     private String name = "";
     private int type = 1; // 1 es tripulante y si es 0 impostor
-    private List<Person> killes  = new ArrayList<>();
+    private List<Person> kills = new ArrayList<>();
 
     public Person(String name) {
         this.name = name;
@@ -32,8 +32,8 @@ public class Person {
     @Override
     public String toString() {
         String killers = "";
-        for (int i = 0; i < killes.size(); i++) {
-            killers += killes.get(i).getName() + ", ";
+        for (int i = 0; i < kills.size(); i++) {
+            killers += kills.get(i).getName() + ", ";
         }
         return "Name: " + name + " " +
                 "type: " + (type == 1 ? "Tripulantes" : "Impostor") +
@@ -44,7 +44,7 @@ public class Person {
         for (int i = 0; i < jugadores.size() ; i++) {
             int randomInt = new Random().nextInt(100);
             if (randomInt % 2 == 0){
-                killes.add(jugadores.get(i));
+                kills.add(jugadores.get(i));
             }
         }
     }
