@@ -46,6 +46,6 @@ public class Player {
     @Override
     public String toString() {
         return "Name: " + this.name + " "
-                + " Tipo: " + (type == 1 ? "Tripulante" : "Impostor" + " ");
+                    + " Tipo: " + (type == 1 ? "Tripulante" : "Impostor" + " ");
     }
 }
