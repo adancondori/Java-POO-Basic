@@ -20,8 +20,20 @@ public class Map {
         int random = new Random().nextInt(players.size());
         players.get(random).setType(TYPE_IMPOSTOR);
 
+        generateKills(players);
+
+
+        // Mostrar Valores
         for (int i = 0; i < players.size(); i++) {
             System.out.println(players.get(i).toString());
+        }
+    }
+
+    public static void generateKills(List<Player> players){
+        for (int i = 0; i < players.size(); i++) {
+            if (players.get(i).getType() == TYPE_IMPOSTOR){
+                players.get(i).killsGenerate(players);
+            }
         }
     }
 }
